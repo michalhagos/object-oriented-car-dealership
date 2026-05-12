@@ -1,6 +1,7 @@
 package com.pluralsight;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class UserInterface {
 
@@ -61,7 +62,7 @@ public class UserInterface {
     }
 
     // This Method will ask user for mileage range and display matching vehicles
-/
+
     public void processGetByMileageRequest() {
 
     }
@@ -83,7 +84,87 @@ public class UserInterface {
     public void processRemoveVehicleRequest() {
 
     }
+    // starts the application and runs the menu loop
+// called from Program to kick everything off
+    public void display() {
+        // load the dealership from the CSV file before showing the menu
+        this.init();
 
+        // create a scanner to read the user's menu choices
+        Scanner theScanner = new Scanner(System.in);
+
+        // this controls whether the menu keeps running
+        boolean menuRunning = true;
+
+        while (menuRunning) {
+            // show the menu options to the user
+            System.out.println("\n=== Car Dealership Menu ===");
+            System.out.println("1 - Find vehicles by price");
+            System.out.println("2 - Find vehicles by make/model");
+            System.out.println("3 - Find vehicles by year range");
+            System.out.println("4 - Find vehicles by color");
+            System.out.println("5 - Find vehicles by mileage");
+            System.out.println("6 - Find vehicles by type");
+            System.out.println("7 - List all vehicles");
+            System.out.println("8 - Add a vehicle");
+            System.out.println("9 - Remove a vehicle");
+            System.out.println("99 - Quit");
+            System.out.print("Enter option: ");
+
+            // read the user's choice safely
+            // if they type something that is not a number we handle it gracefully
+            int option;
+            if (theScanner.hasNextInt()) {
+                // user typed a valid number so we take it
+                option = theScanner.nextInt();
+                // eat the leftover newline so the next scanner read works correctly
+                theScanner.nextLine();
+            } else {
+                // user typed something invalid so we discard it
+                theScanner.nextLine();
+                // set option to -1 so the switch hits the default case
+                option = -1;
+            }
+
+            // call the correct method based on what the user chose
+            switch (option) {
+                case 1:
+                    this.processGetByPriceRequest();
+                    break;
+                case 2:
+                    this.processGetByMakeModelRequest();
+                    break;
+                case 3:
+                    this.processGetByYearRequest();
+                    break;
+                case 4:
+                    this.processGetByColorRequest();
+                    break;
+                case 5:
+                    this.processGetByMileageRequest();
+                    break;
+                case 6:
+                    this.processGetByVehicleTypeRequest();
+                    break;
+                case 7:
+                    this.processGetAllVehiclesRequest();
+                    break;
+                case 8:
+                    this.processAddVehicleRequest();
+                    break;
+                case 9:
+                    this.processRemoveVehicleRequest();
+                    break;
+                case 99:
+                    // stop the menu loop and say goodbye
+                    menuRunning = false;
+                    System.out.println("Have a great day!");
+                    break;
+                default:
+                    System.out.println("Invalid option. Please try again.");
+            }
+        }
+    }
 
 
 
