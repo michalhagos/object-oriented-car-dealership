@@ -104,7 +104,11 @@ public class Dealership {
     }
 
 
+    // removes a vehicle from the dealership inventory
 
+    public void removeVehicle(Vehicle vehicle) {
+
+    }
 
 
 
