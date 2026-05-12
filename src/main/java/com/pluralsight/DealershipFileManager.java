@@ -36,8 +36,27 @@ public class DealershipFileManager {
 // keep reading until there are no more lines that is the use of while loop here
             String vehicleInfo;
             while ((vehicleInfo = inventoryReader.readLine()) != null) {
+// splitting that one vehicle line by |
+                String[] vehicleParts = vehicleInfo.split("\\|");
+
+                // parse each part into the right type
+                int vin          = Integer.parseInt(vehicleParts[0]);
+                int year         = Integer.parseInt(vehicleParts[1]);
+                String make      = vehicleParts[2];
+                String model     = vehicleParts[3];
+                String type      = vehicleParts[4];
+                String color     = vehicleParts[5];
+                int odometer     = Integer.parseInt(vehicleParts[6]);
+                double price     = Double.parseDouble(vehicleParts[7]);
+
+                // create the Vehicle object and add it to the dealership
+                Vehicle vehicle = new Vehicle(vin, year, make, model, type, color, odometer, price);
+                theDealership.addVehicle(vehicle);
 
             }
+            inventoryReader.close();
+
+
 
         } catch (Exception e) {
             System.out.println("Error reading dealership file: " + e.getMessage());
@@ -49,7 +68,10 @@ public class DealershipFileManager {
 
 
     }
+    // empty method for saving the dealership file manager
+    public void saveDealership(Dealership dealership) {
 
+    }
 
 
 
