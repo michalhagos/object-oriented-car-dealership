@@ -27,7 +27,14 @@ public class UserInterface {
             System.out.println(vehicle.toString());
         }
     }
-
+    // gets all vehicles from the dealership and displays them
+// this is the first method I implement to test the file loading works
+    public void processGetAllVehiclesRequest() {
+        // get the full inventory list from the dealership
+        ArrayList<Vehicle> allVehicles = dealership.getAllVehicles();
+        // pass the list to the helper method to display it
+        this.displayVehicles(allVehicles);
+    }
 
 
 
