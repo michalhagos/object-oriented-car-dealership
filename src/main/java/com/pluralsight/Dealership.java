@@ -171,13 +171,13 @@ public class Dealership {
         return results;
     }
 
-
-    // removes a vehicle from the dealership inventory
-
+    // this method removes a vehicle from the dealership inventory by matching the VIN number
+// loops through inventory and removes the vehicle with the matching vin
     public void removeVehicle(Vehicle vehicle) {
-
-
+        // remove the vehicle from the inventory list
+        this.inventory.remove(vehicle);
     }
+
 
 
 
