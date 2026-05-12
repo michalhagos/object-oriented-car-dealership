@@ -18,7 +18,7 @@ public class Vehicle {
     // the price of the vehicle
     private double price;
 
-    // created a constructor sets all fields when a new vehicle is created
+    // created a public constructor that sets all fields when a new vehicle is created
     public Vehicle(int vin, int year, String make, String model,
                    String vehicleType, String color, int odometer, double price) {
         this.vin = vin;
@@ -29,6 +29,46 @@ public class Vehicle {
         this.color = color;
         this.odometer = odometer;
         this.price = price;
+    }
+ // using getters to access my private fields
+    // this getter returns the vehicle identification number
+    public int getVin() {
+        return vin;
+    }
+
+    // this getter returns the year the vehicle was manufactured
+    public int getYear() {
+        return year;
+    }
+
+    // this getter returns the make of the vehicle
+    public String getMake() {
+        return make;
+    }
+
+    // this getter returns the model of the vehicle
+    public String getModel() {
+        return model;
+    }
+
+    // this getter returns the type of the vehicle
+    public String getVehicleType() {
+        return vehicleType;
+    }
+
+    // this getter returns the color of the vehicle
+    public String getColor() {
+        return color;
+    }
+
+    // this getter returns how many miles the vehicle has been driven
+    public int getOdometer() {
+        return odometer;
+    }
+
+    // this getter returns the selling price of the vehicle
+    public double getPrice() {
+        return price;
     }
 
 
