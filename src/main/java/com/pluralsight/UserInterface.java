@@ -75,9 +75,20 @@ public class UserInterface {
 
 
     // This Method will ask user for year range and display matching vehicles
-
     public void processGetByYearRequest() {
+        Scanner scanner = new Scanner(System.in);
 
+        // ask the user for the minimum year
+        System.out.print("Enter minimum year: ");
+        int min = Integer.parseInt(scanner.nextLine());
+
+        // ask the user for the maximum year
+        System.out.print("Enter maximum year: ");
+        int max = Integer.parseInt(scanner.nextLine());
+
+        // get matching vehicles from the dealership and display them
+        ArrayList<Vehicle> results = dealership.getVehiclesByYear(min, max);
+        this.displayVehicles(results);
     }
 
     // This Method will ask user for color and display matching vehicles
