@@ -135,10 +135,48 @@ public class UserInterface {
         this.displayVehicles(results);
     }
 
-    // This Method will ask user for vehicle info and add it to the dealership
-
+    // asks the user for all vehicle details
+// creates a new vehicle and adds it to the dealership
+// then saves the updated inventory to the inventory.csv file
     public void processAddVehicleRequest() {
+        Scanner theScanner = new Scanner(System.in);
 
+        // ask the user for each piece of vehicle information
+        System.out.print("Enter VIN: ");
+        int vin = Integer.parseInt(theScanner.nextLine());
+
+        System.out.print("Enter year: ");
+        int year = Integer.parseInt(theScanner.nextLine());
+
+        System.out.print("Enter make: ");
+        String make = theScanner.nextLine();
+
+        System.out.print("Enter model: ");
+        String model = theScanner.nextLine();
+
+        System.out.print("Enter vehicle type (car, truck, SUV, van): ");
+        String vehicleType = theScanner.nextLine();
+
+        System.out.print("Enter color: ");
+        String color = theScanner.nextLine();
+
+        System.out.print("Enter odometer reading: ");
+        int odometer = Integer.parseInt(theScanner.nextLine());
+
+        System.out.print("Enter price: ");
+        double price = Double.parseDouble(theScanner.nextLine());
+
+        // create the new vehicle object from the user input
+        Vehicle vehicle = new Vehicle(vin, year, make, model, vehicleType, color, odometer, price);
+
+        // add the vehicle to the dealership inventory
+        dealership.addVehicle(vehicle);
+
+        // save the updated inventory back to the CSV file
+        DealershipFileManager fileManager = new DealershipFileManager();
+        fileManager.saveDealership(dealership);
+
+        System.out.println("Vehicle added successfully!");
     }
 
     //This Method will ask user for a vin and remove that vehicle from the dealership
