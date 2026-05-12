@@ -120,10 +120,21 @@ public class Dealership {
         return results;
     }
 
-    // returns vehicles matching the given color.
+    // returns all vehicles matching the given color
 
     public ArrayList<Vehicle> getVehiclesByColor(String color) {
-        return null;
+        // this list will hold all vehicles that match the color
+        ArrayList<Vehicle> results = new ArrayList<>();
+
+        // check every vehicle in the inventory
+        for (Vehicle vehicle : this.inventory) {
+            // if the color matches add it to results
+            if (vehicle.getColor().equalsIgnoreCase(color)) {
+                results.add(vehicle);
+            }
+        }
+
+        return results;
     }
 
     // returns vehicles within the given mileage range.
