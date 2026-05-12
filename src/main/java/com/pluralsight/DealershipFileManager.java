@@ -68,7 +68,7 @@ public class DealershipFileManager {
 
 
     }
-    // empty method for saving the dealership file manager
+    // empty method. saves the dealership and its full inventory back to the CSV file.overwrites the existing file with the most current data
     public void saveDealership(Dealership dealership) {
 
     }
