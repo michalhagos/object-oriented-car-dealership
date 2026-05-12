@@ -1,3 +1,5 @@
+package com.pluralsight;
+
 public class Vehicle {
 
     // creating the fields I need inside the vehicle class
@@ -113,8 +115,7 @@ public class Vehicle {
 
 
 
-    // formats the vehicle as a pipe delimited string
-// this matches the exact format used in the CSV inventory file
+    // the to string Build in method formats the vehicle as a pipe delimited string
 // example: 10112|1993|Ford|Explorer|SUV|Red|525123|995.00
     @Override
     public String toString() {
