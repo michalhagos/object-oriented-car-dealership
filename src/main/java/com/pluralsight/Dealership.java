@@ -13,7 +13,15 @@ public class Dealership {
     // the list of all vehicles in the dealership inventory
     private ArrayList<Vehicle> inventory;
 
-
+    // added a constructor that sets the dealership info and initializes the empty inventory list
+// our inventory must be instantiated here so it is ready to hold vehicles
+    public Dealership(String name, String address, String phone) {
+        this.name = name;
+        this.address = address;
+        this.phone = phone;
+        // initialize the inventory list so it is ready to hold vehicles
+        this.inventory = new ArrayList<>();
+    }
 
 
 
