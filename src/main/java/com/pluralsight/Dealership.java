@@ -22,6 +22,39 @@ public class Dealership {
         // initialize the inventory list so it is ready to hold vehicles
         this.inventory = new ArrayList<>();
     }
+// added setters and getters
+    // returns the name of the dealership
+    public String getName() {
+        return name;
+    }
+
+    // updates the name of the dealership
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    // returns the address of the dealership
+    public String getAddress() {
+        return address;
+    }
+
+    // updates the address of the dealership
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    // returns the phone number of the dealership
+    public String getPhone() {
+        return phone;
+    }
+
+    // updates the phone number of the dealership
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+
+
 
 
 
