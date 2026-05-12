@@ -58,8 +58,21 @@ public class UserInterface {
     // This Method will ask user for make and model and display matching vehicles
 
     public void processGetByMakeModelRequest() {
+        Scanner scanner = new Scanner(System.in);
 
+        // ask the user for the make
+        System.out.print("Enter make: ");
+        String make = scanner.nextLine();
+
+        // ask the user for the model
+        System.out.print("Enter model: ");
+        String model = scanner.nextLine();
+
+        // get matching vehicles from the dealership and display them
+        ArrayList<Vehicle> results = dealership.getVehiclesByMakeModel(make, model);
+        this.displayVehicles(results);
     }
+
 
     // This Method will ask user for year range and display matching vehicles
 
