@@ -65,5 +65,3 @@ The columns are in this order:
 - Maven
 - IntelliJ IDEA
 
-## Author
-Built as part of the Pluralsight Java Academy Object-Oriented Programming workshop by Michal Hagos.
