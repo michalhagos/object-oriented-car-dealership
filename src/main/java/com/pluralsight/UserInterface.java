@@ -1,5 +1,7 @@
 package com.pluralsight;
 
+import java.util.ArrayList;
+
 public class UserInterface {
 
     // the dealership object this User interface will interact with
@@ -15,6 +17,20 @@ public class UserInterface {
         // load the dealership and store it in this class
         this.dealership = fileManager.getDealership();
     }
+
+
+    // this is helper method that displays a list of vehicles. called by every search
+    private void displayVehicles(ArrayList<Vehicle> vehicles) {
+        System.out.println();
+        // loop through every vehicle in the list and print it
+        for (Vehicle vehicle : vehicles) {
+            System.out.println(vehicle.toString());
+        }
+    }
+
+
+
+
 
 
 
