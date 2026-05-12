@@ -54,7 +54,15 @@ public class Dealership {
     }
 
 
+    // returns the full inventory list of all vehicles
+    public ArrayList<Vehicle> getAllVehicles() {
+        return this.inventory;
+    }
 
+    // adds a new vehicle to the dealership inventory
+    public void addVehicle(Vehicle vehicle) {
+        this.inventory.add(vehicle);
+    }
 
 
 
