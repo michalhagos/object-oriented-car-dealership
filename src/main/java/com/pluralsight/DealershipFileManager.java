@@ -1,7 +1,9 @@
 package com.pluralsight;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.FileReader;
+import java.io.FileWriter;
 
 public class DealershipFileManager {
 
@@ -68,9 +70,33 @@ public class DealershipFileManager {
 
 
     }
-    // empty method. saves the dealership and its full inventory back to the CSV file.overwrites the existing file with the most current data
+    // saves the dealership and its full inventory back to the CSV file
+// overwrites the existing file with the most current data
     public void saveDealership(Dealership dealership) {
+        try {
+            // open the file for writing - this overwrites the existing file
+            BufferedWriter fileWriter = new BufferedWriter(new FileWriter(FILE_PATH));
 
+            // write the dealership info as the first line
+            // format is: name|address|phone
+            fileWriter.write(dealership.getName() + "|" +
+                    dealership.getAddress() + "|" +
+                    dealership.getPhone());
+            fileWriter.newLine();
+
+            // write one line for each vehicle using its toString method
+            // toString already formats it as pipe delimited
+            for (Vehicle vehicle : dealership.getAllVehicles()) {
+                fileWriter.write(vehicle.toString());
+                fileWriter.newLine();
+            }
+
+            // closing the file when done writing
+            fileWriter.close();
+
+        } catch (Exception e) {
+            System.out.println("Error saving dealership file: " + e.getMessage());
+        }
     }
 
 
