@@ -85,16 +85,39 @@ public class Dealership {
         return results;
     }
 
-    // returns vehicles matching the given make and model
-
+    // returns all vehicles matching the given make and model
+// used ignore case so that comparison is not case-sensitive so Ford and ford both work
     public ArrayList<Vehicle> getVehiclesByMakeModel(String make, String model) {
-        return null;
+        // this list will hold all vehicles that match the make and model
+        ArrayList<Vehicle> results = new ArrayList<>();
+
+        // check every vehicle in the inventory
+        for (Vehicle vehicle : this.inventory) {
+            // if both make and model match add it to results
+            if (vehicle.getMake().equalsIgnoreCase(make) &&
+                    vehicle.getModel().equalsIgnoreCase(model)) {
+                results.add(vehicle);
+            }
+        }
+
+        return results;
     }
 
-    // returns vehicles within the given year range.
-
+    // returns all vehicles within the given year range
+// loops through inventory and adds matches to the results list
     public ArrayList<Vehicle> getVehiclesByYear(int min, int max) {
-        return null;
+        // this list will hold all vehicles that match the year range
+        ArrayList<Vehicle> results = new ArrayList<>();
+
+        // check every vehicle in the inventory
+        for (Vehicle vehicle : this.inventory) {
+            // if the vehicle year is between min and max add it to results
+            if (vehicle.getYear() >= min && vehicle.getYear() <= max) {
+                results.add(vehicle);
+            }
+        }
+
+        return results;
     }
 
     // returns vehicles matching the given color.
