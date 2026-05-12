@@ -3,7 +3,7 @@ package com.pluralsight;
 import java.util.ArrayList;
 
 public class Dealership {
-// adding private fields to the dealership class
+    // adding private fields to the dealership class
     // the name of the dealership
     private String name;
     // the address of the dealership
@@ -22,7 +22,8 @@ public class Dealership {
         // initialize the inventory list so it is ready to hold vehicles
         this.inventory = new ArrayList<>();
     }
-// added setters and getters
+
+    // added setters and getters
     // returns the name of the dealership
     public String getName() {
         return name;
@@ -63,6 +64,50 @@ public class Dealership {
     public void addVehicle(Vehicle vehicle) {
         this.inventory.add(vehicle);
     }
+
+    // here are getters that need to return an array list but set to null for right now
+
+    // returns vehicles within the given price range .returning null for now
+
+    public ArrayList<Vehicle> getVehiclesByPrice(double min, double max) {
+        return null;
+    }
+
+    // returns vehicles matching the given make and model returns null for now
+
+    public ArrayList<Vehicle> getVehiclesByMakeModel(String make, String model) {
+        return null;
+    }
+
+    // returns vehicles within the given year range. returns null for now
+
+    public ArrayList<Vehicle> getVehiclesByYear(int min, int max) {
+        return null;
+    }
+
+    // returns vehicles matching the given color. returns null for now
+
+    public ArrayList<Vehicle> getVehiclesByColor(String color) {
+        return null;
+    }
+
+    // returns vehicles within the given mileage range. returns null for now
+
+    public ArrayList<Vehicle> getVehiclesByMileage(int min, int max) {
+        return null;
+    }
+
+    // returns vehicles matching the given vehicle type. returns null for now
+
+    public ArrayList<Vehicle> getVehiclesByType(String vehicleType) {
+        return null;
+    }
+
+
+
+
+
+
 
 
 
