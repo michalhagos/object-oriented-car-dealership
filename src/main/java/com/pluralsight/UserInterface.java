@@ -36,7 +36,53 @@ public class UserInterface {
         this.displayVehicles(allVehicles);
     }
 
+    // This Method will ask user for price range and display matching vehicles
 
+    public void processGetByPriceRequest() {
+
+    }
+
+    // This Method will ask user for make and model and display matching vehicles
+
+    public void processGetByMakeModelRequest() {
+
+    }
+
+    // This Method will ask user for year range and display matching vehicles
+
+    public void processGetByYearRequest() {
+
+    }
+
+    // This Method will ask user for color and display matching vehicles
+
+    public void processGetByColorRequest() {
+
+    }
+
+    // This Method will ask user for mileage range and display matching vehicles
+/
+    public void processGetByMileageRequest() {
+
+    }
+
+    // This Method  will ask user for vehicle type and display matching vehicles
+
+    public void processGetByVehicleTypeRequest() {
+
+    }
+
+    // This Method will ask user for vehicle info and add it to the dealership
+
+    public void processAddVehicleRequest() {
+
+    }
+
+    //This Method will ask user for a vin and remove that vehicle from the dealership
+
+    public void processRemoveVehicleRequest() {
+
+    }
 
 
 
