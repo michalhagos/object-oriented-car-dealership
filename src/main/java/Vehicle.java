@@ -70,8 +70,46 @@ public class Vehicle {
     public double getPrice() {
         return price;
     }
+    // Creating setters to update my vehicle class
+    // updates the vehicle identification number
+    public void setVin(int vin) {
+        this.vin = vin;
+    }
 
+    // updates the year the vehicle was manufactured
+    public void setYear(int year) {
+        this.year = year;
+    }
 
+    // updates the make of the vehicle
+    public void setMake(String make) {
+        this.make = make;
+    }
+
+    // updates the model of the vehicle
+    public void setModel(String model) {
+        this.model = model;
+    }
+
+    // updates the type of the vehicle
+    public void setVehicleType(String vehicleType) {
+        this.vehicleType = vehicleType;
+    }
+
+    // updates the color of the vehicle
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    // updates how many miles the vehicle has been driven
+    public void setOdometer(int odometer) {
+        this.odometer = odometer;
+    }
+
+    // updates the selling price of the vehicle
+    public void setPrice(double price) {
+        this.price = price;
+    }
 
 
 
