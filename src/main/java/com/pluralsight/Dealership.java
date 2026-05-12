@@ -137,16 +137,38 @@ public class Dealership {
         return results;
     }
 
-    // returns vehicles within the given mileage range.
-
+    // returns all vehicles within the given mileage range
+// loops through inventory and adds matches to the results list
     public ArrayList<Vehicle> getVehiclesByMileage(int min, int max) {
-        return null;
+        // this list will hold all vehicles that match the mileage range
+        ArrayList<Vehicle> results = new ArrayList<>();
+
+        // check every vehicle in the inventory
+        for (Vehicle vehicle : this.inventory) {
+            // if the odometer reading is between min and max add it to results
+            if (vehicle.getOdometer() >= min && vehicle.getOdometer() <= max) {
+                results.add(vehicle);
+            }
+        }
+
+        return results;
     }
 
-    // returns vehicles matching the given vehicle type.
+    // returns all vehicles matching the given vehicle type
 
     public ArrayList<Vehicle> getVehiclesByType(String vehicleType) {
-        return null;
+        // this list will hold all vehicles that match the type
+        ArrayList<Vehicle> results = new ArrayList<>();
+
+        // check every vehicle in the inventory
+        for (Vehicle vehicle : this.inventory) {
+            // if the vehicle type matches add it to results
+            if (vehicle.getVehicleType().equalsIgnoreCase(vehicleType)) {
+                results.add(vehicle);
+            }
+        }
+
+        return results;
     }
 
 
