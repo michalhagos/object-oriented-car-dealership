@@ -179,13 +179,44 @@ public class UserInterface {
         System.out.println("Vehicle added successfully!");
     }
 
-    //This Method will ask user for a vin and remove that vehicle from the dealership
-
+    // asks the user for a vin number
+// finds that vehicle and removes it from the dealership
+// then saves the updated inventory to the CSV file
     public void processRemoveVehicleRequest() {
+        Scanner scanner = new Scanner(System.in);
 
+        // ask the user for the vin of the vehicle to remove
+        System.out.print("Enter VIN of vehicle to remove: ");
+        int vin = Integer.parseInt(scanner.nextLine());
+
+        // search through the inventory to find the vehicle with that vin
+        Vehicle vehicleToRemove = null;
+        for (Vehicle vehicle : dealership.getAllVehicles()) {
+            if (vehicle.getVin() == vin) {
+                // found the vehicle so store it
+                vehicleToRemove = vehicle;
+                break;
+            }
+        }
+
+        // if we found the vehicle remove it and save the file
+        if (vehicleToRemove != null) {
+            dealership.removeVehicle(vehicleToRemove);
+
+            // save the updated inventory back to the CSV file
+            DealershipFileManager fileManager = new DealershipFileManager();
+            fileManager.saveDealership(dealership);
+
+            System.out.println("Vehicle removed successfully!");
+        } else {
+            // no vehicle with that vin was found
+            System.out.println("No vehicle found with that VIN.");
+        }
     }
-    // starts the application and runs the menu loop
-// called from Program to kick everything off
+
+
+    // the display method starts the application and runs the menu loop
+// called from Program main method to kick everything off
     public void display() {
         // load the dealership from the CSV file before showing the menu
         this.init();
