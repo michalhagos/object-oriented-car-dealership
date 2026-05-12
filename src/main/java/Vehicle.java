@@ -113,6 +113,15 @@ public class Vehicle {
 
 
 
+    // formats the vehicle as a pipe delimited string
+// this matches the exact format used in the CSV inventory file
+// example: 10112|1993|Ford|Explorer|SUV|Red|525123|995.00
+    @Override
+    public String toString() {
+        return vin + "|" + year + "|" + make + "|" + model + "|" +
+                vehicleType + "|" + color + "|" + odometer + "|" + price;
+    }
+
 
 
 
