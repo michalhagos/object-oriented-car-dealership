@@ -40,7 +40,19 @@ public class UserInterface {
     // This Method will ask user for price range and display matching vehicles
 
     public void processGetByPriceRequest() {
+        Scanner scanner = new Scanner(System.in);
 
+        // ask the user for the minimum price
+        System.out.print("Enter minimum price: ");
+        double min = Double.parseDouble(scanner.nextLine());
+
+        // ask the user for the maximum price
+        System.out.print("Enter maximum price: ");
+        double max = Double.parseDouble(scanner.nextLine());
+
+        // get matching vehicles from the dealership and display them
+        ArrayList<Vehicle> results = dealership.getVehiclesByPrice(min, max);
+        this.displayVehicles(results);
     }
 
     // This Method will ask user for make and model and display matching vehicles
