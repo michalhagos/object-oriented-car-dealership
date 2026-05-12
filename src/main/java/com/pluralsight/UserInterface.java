@@ -107,13 +107,32 @@ public class UserInterface {
     // This Method will ask user for mileage range and display matching vehicles
 
     public void processGetByMileageRequest() {
+        Scanner scanner = new Scanner(System.in);
 
+        // ask the user for the minimum mileage
+        System.out.print("Enter minimum mileage: ");
+        int min = Integer.parseInt(scanner.nextLine());
+
+        // ask the user for the maximum mileage
+        System.out.print("Enter maximum mileage: ");
+        int max = Integer.parseInt(scanner.nextLine());
+
+        // get matching vehicles from the dealership and display them
+        ArrayList<Vehicle> results = dealership.getVehiclesByMileage(min, max);
+        this.displayVehicles(results);
     }
 
     // This Method  will ask user for vehicle type and display matching vehicles
-
     public void processGetByVehicleTypeRequest() {
+        Scanner scanner = new Scanner(System.in);
 
+        // ask the user for the vehicle type they want
+        System.out.print("Enter vehicle type (car, truck, SUV, van): ");
+        String type = scanner.nextLine();
+
+        // get matching vehicles from the dealership and display them
+        ArrayList<Vehicle> results = dealership.getVehiclesByType(type);
+        this.displayVehicles(results);
     }
 
     // This Method will ask user for vehicle info and add it to the dealership
