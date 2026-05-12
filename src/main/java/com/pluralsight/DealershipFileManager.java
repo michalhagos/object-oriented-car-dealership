@@ -32,7 +32,12 @@ public class DealershipFileManager {
 
 // create the dealership object using the info from the first line
             theDealership = new Dealership(name, address, phone);
+// read every remaining line which represents one vehicle each
+// keep reading until there are no more lines that is the use of while loop here
+            String vehicleInfo;
+            while ((vehicleInfo = inventoryReader.readLine()) != null) {
 
+            }
 
         } catch (Exception e) {
             System.out.println("Error reading dealership file: " + e.getMessage());
