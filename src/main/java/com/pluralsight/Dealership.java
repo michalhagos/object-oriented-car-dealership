@@ -65,39 +65,51 @@ public class Dealership {
         this.inventory.add(vehicle);
     }
 
-    // here are getters that need to return an array list but set to null for right now
+    // here are getters that need to return an array list
 
-    // returns vehicles within the given price range .returning null for now
 
+    // returns all vehicles within the given price range
+// loops through inventory and adds matches to the results list
     public ArrayList<Vehicle> getVehiclesByPrice(double min, double max) {
-        return null;
+        // this list will hold all vehicles that match the price range
+        ArrayList<Vehicle> results = new ArrayList<>();
+
+        // check every vehicle in the inventory
+        for (Vehicle vehicle : this.inventory) {
+            // if the vehicle price is between min and max add it to results
+            if (vehicle.getPrice() >= min && vehicle.getPrice() <= max) {
+                results.add(vehicle);
+            }
+        }
+
+        return results;
     }
 
-    // returns vehicles matching the given make and model returns null for now
+    // returns vehicles matching the given make and model
 
     public ArrayList<Vehicle> getVehiclesByMakeModel(String make, String model) {
         return null;
     }
 
-    // returns vehicles within the given year range. returns null for now
+    // returns vehicles within the given year range.
 
     public ArrayList<Vehicle> getVehiclesByYear(int min, int max) {
         return null;
     }
 
-    // returns vehicles matching the given color. returns null for now
+    // returns vehicles matching the given color.
 
     public ArrayList<Vehicle> getVehiclesByColor(String color) {
         return null;
     }
 
-    // returns vehicles within the given mileage range. returns null for now
+    // returns vehicles within the given mileage range.
 
     public ArrayList<Vehicle> getVehiclesByMileage(int min, int max) {
         return null;
     }
 
-    // returns vehicles matching the given vehicle type. returns null for now
+    // returns vehicles matching the given vehicle type.
 
     public ArrayList<Vehicle> getVehiclesByType(String vehicleType) {
         return null;
