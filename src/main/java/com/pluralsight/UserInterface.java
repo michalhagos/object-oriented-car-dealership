@@ -92,9 +92,16 @@ public class UserInterface {
     }
 
     // This Method will ask user for color and display matching vehicles
-
     public void processGetByColorRequest() {
+        Scanner scanner = new Scanner(System.in);
 
+        // ask the user for the color they want
+        System.out.print("Enter color: ");
+        String color = scanner.nextLine();
+
+        // get matching vehicles from the dealership and display them
+        ArrayList<Vehicle> results = dealership.getVehiclesByColor(color);
+        this.displayVehicles(results);
     }
 
     // This Method will ask user for mileage range and display matching vehicles
